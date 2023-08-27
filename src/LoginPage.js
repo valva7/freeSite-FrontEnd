@@ -21,31 +21,6 @@ function Login() {
     };
 
     const handleLogin = async () => {
-        try {
-            /*// 로그인 API 호출
-            const response = await axios.get('http://localhost:8080/main/test', credentials);
-
-            // 로그인 성공 시
-            if (response.status === 200) {
-                // 다른 화면으로 이동
-                navigate('/dashboard'); // useNavigate 사용
-            }*/
-
-            // 로그인 API 호출
-            axios.post('http://localhost:8080/login/auth/kakao/token', credentials)
-                .then((response) => {   // 로그인 성공 시
-                    //const token = response.data.token;
-                    //localStorage.setItem('token', token);
-                    // 다른 화면으로 이동
-                    navigate('/dashboard'); // useNavigate 사용
-                })
-                .catch((error) => {
-                    console.error('Login failed:', error);
-                });
-        } catch (error) {
-            // 로그인 실패 처리
-            console.error('로그인 실패:', error);
-        }
 
     };
 

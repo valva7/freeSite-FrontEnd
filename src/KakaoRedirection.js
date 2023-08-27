@@ -7,14 +7,16 @@ const Redirection = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        axios.post(`http://localhost:8080/login/auth/kakao/token${code}`).then((response) => {
-            console.log(response.data);
+        if (code) {
+            axios.post(`http://localhost:8080/login/auth/kakao/token${code}`).then((response) => {
+                console.log(response.data);
 
-            // 토큰을 받아서 localStorage같은 곳에 저장하는 코드를 여기에 쓴다.
-            localStorage.setItem('name', response.data.user_name); // 일단 이름만 저장했다.
+                // 토큰을 받아서 localStorage같은 곳에 저장하는 코드를 여기에 쓴다.
+                localStorage.setItem('name', response.data); // 일단 이름만 저장했다.
 
-            navigate('/main');
-        });
+                navigate('/main');
+            });
+        }
     }, []);
 
     return <div>로그인 중입니다.</div>;
