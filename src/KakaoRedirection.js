@@ -13,7 +13,7 @@ const Redirection = () => {
                 console.log(response.data);
 
                 // 토큰을 받아서 localStorage같은 곳에 저장하는 코드를 여기에 쓴다.
-                localStorage.setItem('access_token', response.data); // 일단 이름만 저장했다.
+                localStorage.setItem('X-AUTH-TOKEN', response.data); // 일단 이름만 저장했다.
 
                 navigate('/main');
             });
